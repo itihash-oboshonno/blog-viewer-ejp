@@ -4,12 +4,12 @@ import IfLoggedOut from "@/components/IfLoggedOut";
 
 const page = async () => {
   const { isAuthenticated } = getKindeServerSession();
-  const user = await isAuthenticated();
-  return (
-    <div>
-      {user ? ( <IfLoggedIn /> ) : ( <IfLoggedOut /> )}
-    </div>
-  );
+
+  if (!(await isAuthenticated())) {
+    return <IfLoggedOut />
+  }
+
+  return <IfLoggedIn />;
 };
 
 export default page;
