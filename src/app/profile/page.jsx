@@ -4,6 +4,7 @@ import IfLoggedOut from "@/components/IfLoggedOut";
 
 const page = async () => {
   const { isAuthenticated } = getKindeServerSession();
+  console.log(getKindeServerSession())
 
   if (!(await isAuthenticated())) {
     return <IfLoggedOut />
