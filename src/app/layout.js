@@ -2,7 +2,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { KindeProvider } from "@kinde-oss/kinde-auth-nextjs";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,16 +21,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <KindeProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </body>
-      </html>
-    </KindeProvider>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }
