@@ -1,5 +1,4 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
-import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import IfLoggedIn from "@/components/IfLoggedIn";
 import IfLoggedOut from "@/components/IfLoggedOut";
 
