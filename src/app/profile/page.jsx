@@ -3,8 +3,8 @@ import IfLoggedIn from "@/components/IfLoggedIn";
 import IfLoggedOut from "@/components/IfLoggedOut";
 
 const page = async () => {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  const { isAuthenticated } = getKindeServerSession();
+  const user = await isAuthenticated();
   return (
     <div>
       {user ? ( <IfLoggedIn /> ) : ( <IfLoggedOut /> )}
